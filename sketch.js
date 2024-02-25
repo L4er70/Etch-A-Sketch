@@ -2,6 +2,8 @@ let sketchContainer = document.querySelector('.sketch');
 let buttonContainer =document.querySelector('.button-container')
 let resizeButton = document.querySelector('.resize');
 let resetButton = document.querySelector('.reset');
+let blackButton =document.querySelector('.black');
+let rgbButton = document.querySelector('.rgb');
 sketchContainer.style.backgroundColor = 'white';
 let number = prompt('enter a number between 1-100');
 let gridHeight = sketchContainer.clientHeight;
@@ -12,6 +14,36 @@ let numberOfSquares = 0;
 let height = gridHeight/number;
 let width = gridWidth/number;
 let resetNumber = 1;
+
+
+resizeButton.addEventListener('click', function(){
+    let number = prompt('enter a size');
+    produceSqaures(number);
+
+})
+
+
+//rgb paint
+rgbButton.addEventListener('click',function(){
+    let cells = sketchContainer.children;
+    for(let cell of cells){
+        cell.addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor= '(red,green,blue)';
+        })
+    }
+})
+
+
+//black paint
+blackButton.addEventListener('click',function(){
+    let cells=sketchContainer.children;
+    for(let cell of cells){
+        cell.addEventListener('mouseover',function(event){
+            event.target.style.backgroundColor = 'black';
+        })
+    }
+
+})
 
 
 
