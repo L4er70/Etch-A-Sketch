@@ -1,15 +1,16 @@
 let sketchContainer = document.querySelector('.sketch');
+sketchContainer.style.backgroundColor = 'white';
 let number = prompt('enter a number between 1-100');
-let squares = Math.ceil(Math.sqrt(number));
-let gridHeight = sketchContainer.clientHeight-20;
-let gridWidth = sketchContainer.clientWidth-20;
+
+let gridHeight = sketchContainer.clientHeight;
+let gridWidth = sketchContainer.clientWidth;
 let gridSpace = 0;
 let sqaresSpace = 0;
 let numberOfSquares = 0;
 
-let height = gridHeight/squares;
-let width = gridWidth/squares;
-let squareSize = gridHeight/squares;
+let height = gridHeight/number;
+let width = gridWidth/number;
+let squareSize = gridHeight/number;
 
 function getGridSpace(height,width){
     let space=height*width;
@@ -47,10 +48,10 @@ console.log(numberOfSquares);
 function produceSqaures(number) {
     for(let i=0;i<number;i++){
         let divSquare =document.createElement('div');
-        divSquare.classList.add('divSquare');
+        divSquare.classList.add('Square');
        // divSquare.style.flex = '1 1 0';
-        divSquare.style.width= `${squareSize}px`;
-        divSquare.style.height= `${squareSize}px`;
+        divSquare.style.width= `${width}px`;
+        divSquare.style.height= `${height}px`;
         divSquare.style.backgroundColor = 'red';
       //  divSquare.style.margin=0;
         //divSquare.style.padding=0;

@@ -33,13 +33,20 @@ body{
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    box-sizing: border-box;
+   
+   
 }
-.sketch divSquare{
+.Square{
+    flex: 1 0 auto;
+    
+    
+
+    
+
+
+    aspect-ratio: 1 /1 ;
     box-sizing: border-box;
-    border: 1px ;
+    
 }
 .footer{
     width: 100%;
