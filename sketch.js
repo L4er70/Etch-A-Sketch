@@ -1,21 +1,35 @@
 let sketchContainer = document.querySelector('.sketch');
+let buttonContainer =document.querySelector('.button-container')
+let resizeButton = document.querySelector('.resize');
+let resetButton = document.querySelector('.reset');
 sketchContainer.style.backgroundColor = 'white';
 let number = prompt('enter a number between 1-100');
-
 let gridHeight = sketchContainer.clientHeight;
 let gridWidth = sketchContainer.clientWidth;
 let gridSpace = 0;
 let sqaresSpace = 0;
 let numberOfSquares = 0;
-
 let height = gridHeight/number;
 let width = gridWidth/number;
-let squareSize = gridHeight/number;
+let resetNumber = 1;
+
+
+
+//reset button listener
+resetButton.addEventListener('click', reset);
+//reset button handeler
+function reset(){
+    let cells = sketchContainer.children;
+    for(let cell of cells){
+        cell.style.backgroundColor = 'white';
+        
+    } 
+    
+}
 
 function getGridSpace(height,width){
     let space=height*width;
     gridSpace=space;
-
     return space;
 
 }
@@ -46,23 +60,18 @@ console.log(numberOfSquares);
 
 
 function produceSqaures(number) {
-    for(let i=0;i<number;i++){
+
+
+       for(let i=0;i<number;i++){
         let divSquare =document.createElement('div');
         divSquare.classList.add('Square');
-       // divSquare.style.flex = '1 1 0';
         divSquare.style.width= `${width}px`;
         divSquare.style.height= `${height}px`;
-        divSquare.style.backgroundColor = 'red';
-      //  divSquare.style.margin=0;
-        //divSquare.style.padding=0;
-        divSquare.style.border= 'solid black';
-        
-       // divSquare.textContent= '';
-        
-        
-
+        divSquare.style.backgroundColor = 'white';
+        //divSquare.style.border= 'solid black';
         sketchContainer.appendChild(divSquare);
     }
+
 
     
 }
