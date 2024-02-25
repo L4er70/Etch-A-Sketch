@@ -16,6 +16,12 @@ let width = gridWidth/number;
 let resetNumber = 1;
 
 
+
+
+
+
+
+
 resizeButton.addEventListener('click', function(){
     let number = prompt('enter a size');
     produceSqaures(number);
@@ -28,7 +34,7 @@ rgbButton.addEventListener('click',function(){
     let cells = sketchContainer.children;
     for(let cell of cells){
         cell.addEventListener('mouseover', function(event){
-            event.target.style.backgroundColor= '(red,green,blue)';
+            event.target.style.backgroundColor= 'rgb(122,45,67)';
         })
     }
 })
