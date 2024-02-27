@@ -4,11 +4,14 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
+    background-color: #f0f0f0;
 }
 .container{
     height: 800px;
     width: 1000px;
-    background-color: antiquewhite;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1) ;
     padding: 0;
     flex-wrap: wrap;
     
@@ -21,6 +24,8 @@ body{
     position: absolute;
     top: 20%;
     left: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     flex: 1 1 auto;
     display: flex;
     flex-wrap: wrap;
@@ -30,14 +35,25 @@ body{
 }
 .button-container button{
     width: 80px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #8a2be2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+
 
 .header{
     width: 100%;
     height: 100px;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background-color:#8a2be2;
+    border-top-left-radius:20px ;
+    border-top-right-radius: 20px;
+    color: #fff;
     margin: 0;
     display: flex;
 }
@@ -45,15 +61,19 @@ body{
     
     padding: 0;
     margin: 0;
+    font-size: 24px;
 }
 .sketch{
     
     width: 600px;
     height: 600px;
-    background-color: blue;
+    background-color: #fff;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
    
    
 }
@@ -62,6 +82,9 @@ body{
    flex: 1 0 auto;
     aspect-ratio: 1 /1 ;
     box-sizing: border-box;
+    background-color: #ccc;
+    border: 1px solid #fff;
+    transition: background-color 0.3s ease;
     
 }
 .footer{
@@ -70,8 +93,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #8a2be2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+
+
 }
 .footer h1{
     padding: 0;
     margin: 0;
+    font-size: 24px;
 }
