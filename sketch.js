@@ -5,7 +5,7 @@ let resetButton = document.querySelector('.reset');
 let blackButton =document.querySelector('.black');
 let rgbButton = document.querySelector('.rgb');
 sketchContainer.style.backgroundColor = 'white';
-let number = prompt('enter a number between 1-100');
+let number = 20;
 let gridHeight = sketchContainer.clientHeight;
 let gridWidth = sketchContainer.clientWidth;
 let gridSpace = 0;
@@ -17,16 +17,32 @@ let resetNumber = 1;
 
 
 
+resizeButton.addEventListener('click',function(){
+    let userInput = prompt('enter a number between 10 to 100');
+    let newNum = parseInt(userInput);
+    if(!isNaN(newNum) && newNum>0){
+        resize(newNum);
+
+    }else{
+        alert('Invalid number')
+    }
+});
+
+function resize(newNumber){
+    sketchContainer.innerHTML = '';
+    console.log(sketchContainer)
+   width = gridWidth / newNumber;
+   height = gridHeight/ newNumber;
+
+    numberOfSquares = newNumber*newNumber;
+    produceSqaures(numberOfSquares);
 
 
 
 
 
-resizeButton.addEventListener('click', function(){
-    let number = prompt('enter a size');
-    produceSqaures(number);
+}
 
-})
 
 
 //rgb paint
@@ -63,6 +79,7 @@ function reset(){
         
     } 
     
+    console.log(sketchContainer)
 }
 
 function getGridSpace(height,width){
@@ -106,7 +123,7 @@ function produceSqaures(number) {
         divSquare.style.width= `${width}px`;
         divSquare.style.height= `${height}px`;
         divSquare.style.backgroundColor = 'white';
-        //divSquare.style.border= 'solid black';
+      //  divSquare.style.border= 'dashed black';
         sketchContainer.appendChild(divSquare);
     }
 
